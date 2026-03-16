@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+dist/
+.angular/
+.build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+Thumbs.db
+
+# Build
+/build
+/dist
+*.js.map
+*.css.map
+
+# Testing
+/coverage
+/test-results
+
+# Local history for Visual Studio Code
+.history/
+
+# Misc
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
