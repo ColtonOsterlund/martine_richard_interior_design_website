@@ -6,11 +6,48 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+// Define custom gold and cream palettes for Martine Richard branding
+$gold-palette: (
+  0: #000000,
+  10: #332702,
+  20: #4d3a0c,
+  25: #5a4516,
+  30: #684d1a,
+  35: #765621,
+  40: #855f28,
+  50: #a07840,
+  60: #bc9157,
+  70: #d9a970,
+  80: #f6c289,
+  90: #ffdab3,
+  95: #fdefd8,
+  99: #fffbf8,
+  100: #ffffff,
+);
+
+$cream-palette: (
+  0: #000000,
+  10: #332602,
+  20: #4d3a0c,
+  25: #5a4516,
+  30: #684d1a,
+  35: #765621,
+  40: #855f28,
+  50: #a07840,
+  60: #bc9157,
+  70: #d9a970,
+  80: #e8d5bf,
+  90: #f6e8d8,
+  95: #fdf4ed,
+  99: #fffbf8,
+  100: #ffffff,
+);
+
 html {
   @include mat.theme((
     color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      primary: $gold-palette,
+      tertiary: $cream-palette,
     ),
     typography: Roboto,
     density: 0,
@@ -33,7 +70,30 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
-/* You can add global styles to this file, and also import other style files */
 
+/* Global styles for elegant design */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mat-sys-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mat-sys-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mat-sys-primary-dark);
+}
