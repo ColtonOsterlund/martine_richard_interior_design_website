@@ -1,0 +1,150 @@
+<div class="portfolio-container">
+  <!-- Header Section -->
+  <section class="portfolio-header">
+    <div class="header-content">
+      <h1>Our Portfolio</h1>
+      <p class="subtitle">Showcase of Recent Design Projects</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="portfolio-main">
+    <div class="content-wrapper">
+      <div class="filter-section">
+        <h2>Filter by Project Type</h2>
+        <div class="filter-buttons">
+          <button 
+            mat-button 
+            [class.active]="selectedCategory === 'all'"
+            (click)="filterByCategory('all')"
+          >
+            All Projects
+          </button>
+          <button 
+            mat-button 
+            *ngFor="let category of categories"
+            [class.active]="selectedCategory === category"
+            (click)="filterByCategory(category)"
+          >
+            {{ category }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Portfolio Gallery -->
+      <div class="portfolio-gallery">
+        <div 
+          class="portfolio-item" 
+          *ngFor="let project of filteredProjects; let i = index"
+          [@fadeIn]
+        >
+          <div class="portfolio-image-wrapper">
+            <img 
+              [src]="project.image" 
+              [alt]="project.title"
+              class="portfolio-image"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <div class="overlay-content">
+                <h3>{{ project.title }}</h3>
+                <p class="project-category">{{ project.category }}</p>
+                <button 
+                  mat-icon-button 
+                  color="accent"
+                  (click)="openProject(project)"
+                  [attr.aria-label]="'View ' + project.title"
+                >
+                  <mat-icon>zoom_in</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.shortDescription }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Modal Dialog -->
+  <div class="project-modal" *ngIf="selectedProject" (click)="closeProject()" [@fadeInScale]>
+    <div class="modal-content" (click)="$event.stopPropagation()" [@slideUp]>
+      <button 
+        mat-icon-button 
+        class="close-btn"
+        (click)="closeProject()"
+        [attr.aria-label]="'Close project details'"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class="modal-image">
+        <img [src]="selectedProject.image" [alt]="selectedProject.title" />
+      </div>
+
+      <div class="modal-details">
+        <h2>{{ selectedProject.title }}</h2>
+        <p class="project-type">{{ selectedProject.category }}</p>
+        
+        <div class="project-description">
+          <h3>Project Overview</h3>
+          <p>{{ selectedProject.description }}</p>
+        </div>
+
+        <div class="project-services">
+          <h3>Services Provided</h3>
+          <div class="service-tags">
+            <span class="tag" *ngFor="let service of selectedProject.services">
+              {{ service }}
+            </span>
+          </div>
+        </div>
+
+        <div class="project-highlights">
+          <h3>Project Highlights</h3>
+          <ul>
+            <li *ngFor="let highlight of selectedProject.highlights">
+              {{ highlight }}
+            </li>
+          </ul>
+        </div>
+
+        <button 
+          mat-raised-button 
+          color="primary" 
+          routerLink="/contact"
+          (click)="closeProject()"
+        >
+          Start Your Project
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="content-wrapper">
+      <h2>By The Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <div class="stat-number">{{ stat.number }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Create Your Design Story?</h2>
+      <p>Let's transform your space into something beautiful and functional.</p>
+      <button mat-raised-button color="primary" routerLink="/contact">
+        Schedule Your Consultation
+      </button>
+    </div>
+  </section>
+</div>

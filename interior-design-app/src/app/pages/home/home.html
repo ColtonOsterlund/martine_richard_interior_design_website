@@ -1,0 +1,90 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image-wrapper">
+      <img 
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1400&q=80" 
+        alt="Modern interior design with elegant furniture and lighting" 
+        class="hero-image"
+      />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="logo-section">
+        <img 
+          src="assets/Martine_Richard_Interior_Design_Logo.png" 
+          alt="Martine Richard Interior Design" 
+          class="hero-logo"
+        />
+      </div>
+
+      <h1 class="hero-title">Martine Richard Interior Design</h1>
+      <p class="hero-subtitle">Transforming Spaces with Elegance and Vision</p>
+
+      <div class="hero-description">
+        <p>
+          Welcome to a world of sophisticated interior design. With years of professional expertise, 
+          Martine Richard specializes in creating beautiful, functional spaces that reflect your unique style and personality.
+        </p>
+      </div>
+
+      <div class="hero-cta">
+        <button mat-raised-button color="primary" (click)="scrollToSection('about')">
+          Learn More
+        </button>
+        <button mat-stroked-button color="primary" (click)="scrollToSection('contact')">
+          Get in Touch
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="preview-section about-preview" id="about">
+    <div class="preview-content">
+      <h2>Elevating Interior Spaces</h2>
+      <p>
+        Martine Richard brings a wealth of experience and creative vision to every project. 
+        From residential redesigns to complete transformations, each space is crafted with meticulous attention to detail 
+        and a deep understanding of design principles and client needs.
+      </p>
+      <a mat-button color="primary" routerLink="/about">
+        Explore Our Approach
+        <mat-icon>arrow_forward</mat-icon>
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Preview Section -->
+  <section class="preview-section services-preview">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <mat-card>
+          <mat-card-header>
+            <mat-icon class="service-icon">{{ getServiceIcon(service) }}</mat-icon>
+            <mat-card-title>{{ service }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Professional {{ service | lowercase }} tailored to your vision and budget.</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <a mat-stroked-button color="primary" routerLink="/services" class="services-link">
+      View All Services
+    </a>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="contact">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Space?</h2>
+      <p>Let's work together to create an interior that tells your story.</p>
+      <button mat-raised-button color="primary" routerLink="/contact">
+        Contact Martine Richard
+      </button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,130 @@
+<div class="about-container">
+  <!-- Header Section -->
+  <section class="about-header">
+    <div class="header-content">
+      <h1>About Martine Richard</h1>
+      <p class="subtitle">Bringing Vision and Expertise to Every Design</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="about-main">
+    <div class="content-wrapper">
+      <!-- Introduction -->
+      <div class="intro-section">
+        <h2>Professional Interior Design Excellence</h2>
+        <p>
+          Martine Richard is a dedicated interior design professional with a passion for creating 
+          beautiful, functional spaces that enhance the lives of her clients. With years of experience 
+          in residential design and transformation, Martine brings a unique blend of creativity, 
+          practical expertise, and personalized attention to every project.
+        </p>
+        <p>
+          Whether you're looking to refresh a single room or undertake a complete home transformation, 
+          Martine Richard Interior Design offers comprehensive solutions tailored to your style, 
+          preferences, and budget.
+        </p>
+      </div>
+
+      <!-- Design Philosophy -->
+      <div class="philosophy-section">
+        <h2>Design Philosophy</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <mat-icon class="philosophy-icon">lightbulb</mat-icon>
+            <h3>Creative Vision</h3>
+            <p>
+              Each space tells a story. I work to understand your vision and translate it into 
+              a beautiful reality that reflects your personality and meets your needs.
+            </p>
+          </div>
+
+          <div class="philosophy-item">
+            <mat-icon class="philosophy-icon">psychology</mat-icon>
+            <h3>Thoughtful Design</h3>
+            <p>
+              Every design decision is intentional. From color palettes to furniture placement, 
+              each element serves a purpose in creating harmonious, livable spaces.
+            </p>
+          </div>
+
+          <div class="philosophy-item">
+            <mat-icon class="philosophy-icon">attach_money</mat-icon>
+            <h3>Value-Focused</h3>
+            <p>
+              Quality design doesn't require an unlimited budget. I specialize in creating 
+              stunning spaces that work within your financial parameters.
+            </p>
+          </div>
+
+          <div class="philosophy-item">
+            <mat-icon class="philosophy-icon">handshake</mat-icon>
+            <h3>Client Partnership</h3>
+            <p>
+              Your satisfaction is my priority. I maintain open communication throughout the 
+              process, ensuring your vision becomes reality.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expertise Areas -->
+      <div class="expertise-section">
+        <h2>Areas of Expertise</h2>
+        <div class="expertise-list">
+          <div class="expertise-item" *ngFor="let expertise of expertiseAreas">
+            <mat-icon>check_circle</mat-icon>
+            <div class="expertise-content">
+              <h4>{{ expertise.title }}</h4>
+              <p>{{ expertise.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="content-wrapper">
+      <h2>My Design Process</h2>
+      <p class="section-intro">
+        A collaborative approach to creating your ideal space
+      </p>
+
+      <div class="process-steps">
+        <div class="step" *ngFor="let step of processSteps; let i = index">
+          <div class="step-number">{{ i + 1 }}</div>
+          <div class="step-content">
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="content-wrapper">
+      <h2>Core Values</h2>
+      <div class="values-grid">
+        <div class="value-card" *ngFor="let value of coreValues">
+          <h3>{{ value.title }}</h3>
+          <p>{{ value.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Space?</h2>
+      <p>Let's work together to create an interior design that truly reflects who you are.</p>
+      <button mat-raised-button color="primary" routerLink="/contact">
+        Start Your Project
+      </button>
+    </div>
+  </section>
+</div>

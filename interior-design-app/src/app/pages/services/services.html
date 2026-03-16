@@ -1,0 +1,110 @@
+<div class="services-container">
+  <!-- Header Section -->
+  <section class="services-header">
+    <div class="header-content">
+      <h1>Our Services</h1>
+      <p class="subtitle">Comprehensive Interior Design Solutions</p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="services-main">
+    <div class="content-wrapper">
+      <p class="intro-text">
+        From selecting the perfect furniture pieces to complete home transformations, 
+        Martine Richard offers a full range of professional interior design services tailored to your needs.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card" *ngFor="let service of services; let i = index">
+          <mat-card>
+            <mat-card-header>
+              <div class="service-icon-wrapper" [ngClass]="'icon-' + (i + 1)">
+                <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+              </div>
+              <mat-card-title>{{ service.title }}</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              <p class="service-description">{{ service.shortDescription }}</p>
+
+              <div class="service-details">
+                <h4>What's Included:</h4>
+                <ul>
+                  <li *ngFor="let item of service.includes">{{ item }}</li>
+                </ul>
+              </div>
+
+              <div class="service-benefits">
+                <h4>Benefits:</h4>
+                <ul>
+                  <li *ngFor="let benefit of service.benefits">{{ benefit }}</li>
+                </ul>
+              </div>
+            </mat-card-content>
+
+            <mat-card-footer>
+              <button mat-stroked-button color="primary" (click)="contactAboutService(service.title)">
+                Learn More
+              </button>
+            </mat-card-footer>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Combinations -->
+  <section class="combinations-section">
+    <div class="content-wrapper">
+      <h2>Service Packages</h2>
+      <p class="section-intro">
+        Combine services for comprehensive design solutions
+      </p>
+
+      <div class="packages-grid">
+        <div class="package-card" *ngFor="let pkg of servicePackages">
+          <h3>{{ pkg.name }}</h3>
+          <p class="package-description">{{ pkg.description }}</p>
+          <div class="package-services">
+            <span class="service-tag" *ngFor="let service of pkg.services">
+              {{ service }}
+            </span>
+          </div>
+          <p class="package-ideal">{{ pkg.idealFor }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="service-process">
+    <div class="content-wrapper">
+      <h2>How It Works</h2>
+      <p class="section-intro">
+        Our streamlined process ensures a smooth and satisfying experience
+      </p>
+
+      <div class="process-timeline">
+        <div class="timeline-step" *ngFor="let step of processSteps; let i = index">
+          <div class="step-marker">{{ i + 1 }}</div>
+          <div class="step-info">
+            <h4>{{ step.title }}</h4>
+            <p>{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Enhance Your Space?</h2>
+      <p>Let's discuss which services are right for your project.</p>
+      <button mat-raised-button color="primary" routerLink="/contact">
+        Schedule Consultation
+      </button>
+    </div>
+  </section>
+</div>
