@@ -34,13 +34,13 @@ app.get('/api/health', (req, res) => {
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
-    const { name, email, phone, projectType, budget, message } = req.body;
+    const { name, email, phone, budget, message } = req.body;
 
     // Validate required fields
-    if (!name || !email || !projectType || !message) {
+    if (!name || !email || !message) {
       return res.status(400).json({
         success: false,
-        message: 'Missing required fields: name, email, projectType, message'
+        message: 'Missing required fields: name, email, message'
       });
     }
 
@@ -59,7 +59,7 @@ app.post('/api/contact', async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: toEmail,
-      subject: `New Contact Form Submission from ${name} - ${projectType}`,
+      subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #8B7355;">New Contact Form Submission</h2>
@@ -67,8 +67,6 @@ app.post('/api/contact', async (req, res) => {
             <p><strong>Name:</strong> ${escapeHtml(name)}</p>
             <p><strong>Email:</strong> ${escapeHtml(email)}</p>
             <p><strong>Phone:</strong> ${phone ? escapeHtml(phone) : 'Not provided'}</p>
-            <p><strong>Project Type:</strong> ${escapeHtml(projectType)}</p>
-            <p><strong>Budget:</strong> ${budget ? escapeHtml(budget) : 'Not specified'}</p>
             <p><strong>Message:</strong></p>
             <p style="background-color: white; padding: 15px; border-left: 4px solid #D4AF70;">
               ${escapeHtml(message).replace(/\n/g, '<br>')}
@@ -98,7 +96,6 @@ app.post('/api/contact', async (req, res) => {
           <p>We've received your message and will review it shortly.</p>
           <p>Martine typically responds to all inquiries within 24 hours.</p>
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Project Type:</strong> ${escapeHtml(projectType)}</p>
             <p><strong>Your Message:</strong></p>
             <p style="background-color: white; padding: 15px; border-left: 4px solid #D4AF70;">
               ${escapeHtml(message).replace(/\n/g, '<br>')}

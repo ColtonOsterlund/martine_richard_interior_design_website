@@ -243,15 +243,22 @@
         cursor: not-allowed;
       }
 
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+      }
+
       mat-spinner {
-        margin-right: 0.75rem;
+        display: inline-flex;
       }
 
       ::ng-deep {
         .mdc-button__label {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          justify-content: center;
         }
       }
     }

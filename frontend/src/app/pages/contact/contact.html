@@ -46,7 +46,7 @@
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <div class="form-group">
             <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Your Name *</mat-label>
+              <mat-label>Your Name </mat-label>
               <input
                 matInput
                 formControlName="name"
@@ -64,7 +64,7 @@
 
           <div class="form-row">
             <mat-form-field appearance="outline" class="half-width">
-              <mat-label>Email *</mat-label>
+              <mat-label>Email </mat-label>
               <input
                 matInput
                 formControlName="email"
@@ -91,38 +91,11 @@
             </mat-form-field>
           </div>
 
-          <div class="form-group">
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Project Type *</mat-label>
-              <mat-select formControlName="projectType" required>
-                <mat-option value="">Select a service</mat-option>
-                <mat-option *ngFor="let service of services" [value]="service">
-                  {{ service }}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="contactForm.get('projectType')?.hasError('required')">
-                Please select a project type
-              </mat-error>
-            </mat-form-field>
-          </div>
+
 
           <div class="form-group">
             <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Budget (Optional)</mat-label>
-              <mat-select formControlName="budget">
-                <mat-option value="">Not specified</mat-option>
-                <mat-option value="under-5k">Under $5,000</mat-option>
-                <mat-option value="5k-10k">$5,000 - $10,000</mat-option>
-                <mat-option value="10k-25k">$10,000 - $25,000</mat-option>
-                <mat-option value="25k-50k">$25,000 - $50,000</mat-option>
-                <mat-option value="50k-plus">$50,000+</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-
-          <div class="form-group">
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Your Message *</mat-label>
+              <mat-label>Your Message </mat-label>
               <textarea
                 matInput
                 formControlName="message"

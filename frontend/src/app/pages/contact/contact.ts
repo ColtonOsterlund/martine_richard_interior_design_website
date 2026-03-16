@@ -41,14 +41,7 @@ export class Contact implements OnInit {
   submitStatus: 'idle' | 'success' | 'error' = 'idle';
   errorMessage = '';
 
-  services = [
-    'Furniture Selection',
-    'Paint Selection',
-    'Renovation Inspiration & Planning',
-    'Staging',
-    'Custom Floor Plans & Elevations',
-    'Multiple Services',
-  ];
+
 
   faqs = [
     {
@@ -100,8 +93,6 @@ export class Contact implements OnInit {
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.pattern(/^[\d\s\-\(\)\+]*$/)]],
-      projectType: ['', Validators.required],
-      budget: [''],
       message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(1000)]],
     });
   }
