@@ -117,6 +117,27 @@
     </div>
   </section>
 
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="content-wrapper">
+      <h2>Client Testimonials</h2>
+      <p class="section-intro">
+        Hear what our clients have to say about working with Martine Richard
+      </p>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+          <div class="testimonial-content">
+            <p class="testimonial-text">{{ testimonial.text }}</p>
+          </div>
+          <div class="testimonial-author">
+            <p class="author-name">— {{ testimonial.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-content">

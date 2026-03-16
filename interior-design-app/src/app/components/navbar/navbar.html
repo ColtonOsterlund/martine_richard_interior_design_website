@@ -4,7 +4,7 @@
     <div class="logo-section">
       <a routerLink="/" class="logo-link">
         <img 
-          src="assets/Martine_Richard_Interior_Design_Logo.png" 
+          src="assets/Martine_Richard_Interior_Design_Logo.svg" 
           alt="Martine Richard Interior Design" 
           class="logo"
         />
@@ -23,16 +23,14 @@
       </a>
 
       <!-- Services with Dropdown -->
-      <div class="menu-item" [matMenuTriggerFor]="servicesMenu">
-        <button 
-          mat-button
-          [matMenuTriggerFor]="servicesMenu"
-          class="services-btn"
-        >
-          Services Offered
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-      </div>
+      <a 
+        mat-button 
+        routerLink="/services" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+      >
+        Services Offered
+      </a>
 
       <a 
         mat-button 
@@ -77,25 +75,15 @@
     </a>
 
     <div class="mobile-submenu">
-      <button 
+      <a 
         mat-button 
-        (click)="toggleServicesSubmenu()"
+        routerLink="/services" 
+        routerLinkActive="active"
+        (click)="mobileMenuOpen = false"
         class="mobile-nav-item"
       >
         Services Offered
-        <mat-icon>{{ servicesOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
-      </button>
-      
-      <div class="mobile-services" *ngIf="servicesOpen" [@slideDown]>
-        <a 
-          mat-button 
-          *ngFor="let service of services"
-          (click)="mobileMenuOpen = false"
-          class="mobile-service-item"
-        >
-          {{ service }}
-        </a>
-      </div>
+      </a>
     </div>
 
     <a 
@@ -120,13 +108,5 @@
   </nav>
 </mat-toolbar>
 
-<!-- Services Dropdown Menu (Desktop) -->
-<mat-menu #servicesMenu="matMenu" panelClass="services-menu-panel">
-  <a 
-    mat-menu-item 
-    *ngFor="let service of services"
-    routerLink="/services"
-  >
-    {{ service }}
-  </a>
-</mat-menu>
+
+<!-- Services Dropdown Menu removed -->

@@ -89,4 +89,19 @@ export class About {
         'Innovative solutions to design challenges that enhance your space and exceed expectations.',
     },
   ];
+
+  testimonials = [
+    {
+      name: 'Lorna P.',
+      text: 'Martine has been my trusted guide for over 20 years in working through a significant kitchen renovation, offering colour recommendations/designs in several consecutive homes, window treatment advice and even providing shopping service for new furnishings and artwork. Martine has always gone above & beyond. I highly recommend her expertise!',
+    },
+    {
+      name: 'Leanne P.',
+      text: 'You are so talented Martine. Two Reno\'s with you and we love both! You nailed the refinishing on this piece! (referring to a sideboard I transformed for Leanne).',
+    },
+    {
+      name: 'Sue H.',
+      text: 'Martine has been such a treasure to us over the years; she has helped us with many home renovation projects, offering up creative ideas we wouldn\'t have thought of. She has prepared floor plans for us, shopped for our furnishings and art, and even set it all up with the final touches. We love her!',
+    },
+  ];
 }

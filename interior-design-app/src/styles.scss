@@ -14,7 +14,7 @@ $gold-palette: (
   25: #543e28,
   30: #624730,
   35: #703f38,
-  40: #8D742C,
+  40: #896D2E,
   50: #a4853e,
   60: #bc9657,
   70: #d4a973,
@@ -96,4 +96,21 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--mat-sys-primary-dark);
+}
+
+/* Services Menu Styling */
+.services-menu-panel {
+  background-color: var(--mat-sys-primary) !important;
+}
+
+.services-menu-panel .mdc-list-item {
+  color: var(--mat-sys-on-primary) !important;
+}
+
+.services-menu-panel .mdc-list-item__primary-text {
+  color: var(--mat-sys-on-primary) !important;
+}
+
+.services-menu-panel .mdc-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }

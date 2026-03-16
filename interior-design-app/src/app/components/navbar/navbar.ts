@@ -35,24 +35,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class Navbar {
   mobileMenuOpen = false;
-  servicesOpen = false;
-
-  services = [
-    'Furniture Selection',
-    'Paint Selection',
-    'Renovation Inspiration & Planning',
-    'Staging',
-    'Custom Floor Plans & Elevations',
-  ];
 
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
-    if (!this.mobileMenuOpen) {
-      this.servicesOpen = false;
-    }
-  }
-
-  toggleServicesSubmenu(): void {
-    this.servicesOpen = !this.servicesOpen;
   }
 }

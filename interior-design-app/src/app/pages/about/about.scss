@@ -11,7 +11,7 @@
     var(--mat-sys-primary-container) 0%,
     var(--mat-sys-primary) 100%
   );
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   color: var(--mat-sys-on-primary);
   text-align: center;
 
@@ -37,7 +37,7 @@
 
 /* ===== Main Content Section ===== */
 .about-main {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: var(--mat-sys-surface);
 
   .content-wrapper {
@@ -51,6 +51,7 @@
     margin: 0 0 2rem 0;
     color: var(--mat-sys-on-surface);
     letter-spacing: 0.5px;
+    text-align: center;
   }
 
   p {
@@ -62,8 +63,11 @@
 }
 
 .intro-section {
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
   max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 
   p {
     font-size: 1.1rem;
@@ -76,13 +80,13 @@
 
 /* ===== Philosophy Section ===== */
 .philosophy-section {
-  margin-bottom: 4rem;
+  margin-bottom: 7rem;
 
   .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2.5rem;
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
 
     .philosophy-item {
       display: flex;
@@ -130,15 +134,21 @@
 
 /* ===== Expertise Section ===== */
 .expertise-section {
+  text-align: center;
+  margin-bottom: 7rem;
+
   .expertise-list {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 2.5rem;
+    gap: 2rem;
+    margin-top: 3.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 
     .expertise-item {
       display: flex;
       gap: 1.5rem;
-      padding: 1.5rem;
+      padding: 2rem;
       background: linear-gradient(
         135deg,
         var(--mat-sys-surface-container-low) 0%,
@@ -168,6 +178,7 @@
 
       .expertise-content {
         flex: 1;
+        text-align: left;
 
         h4 {
           font-size: 1.1rem;
@@ -187,7 +198,7 @@
 
 /* ===== Process Section ===== */
 .process-section {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: linear-gradient(
     135deg,
     var(--mat-sys-surface-container-low) 0%,
@@ -215,18 +226,23 @@
   }
 
   .process-steps {
-    display: grid;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 700px;
+    margin: 0 auto;
 
     .step {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 2rem;
-      align-items: flex-start;
-      padding: 2rem;
+      padding: 2.5rem;
       background: var(--mat-sys-surface);
       border-radius: 8px;
       border: 1px solid var(--mat-sys-outline-variant);
       transition: all 0.3s ease;
+      text-align: center;
 
       &:hover {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -269,7 +285,7 @@
 
 /* ===== Values Section ===== */
 .values-section {
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   background: var(--mat-sys-surface);
 
   .content-wrapper {
@@ -288,18 +304,14 @@
   .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 
     .value-card {
       padding: 2.5rem;
-      background: linear-gradient(
-        135deg,
-        var(--mat-sys-primary-container) 0%,
-        var(--mat-sys-primary-container) 100%
-      );
+      background: var(--mat-sys-primary);
       border-radius: 8px;
       border: 1px solid var(--mat-sys-primary);
-      color: var(--mat-sys-on-primary-container);
+      color: var(--mat-sys-on-primary);
       transition: all 0.3s ease;
 
       &:hover {
@@ -317,7 +329,86 @@
         font-size: 0.95rem;
         line-height: 1.6;
         margin: 0;
-        color: var(--mat-sys-on-primary-container);
+        color: var(--mat-sys-on-primary);
+      }
+    }
+  }
+}
+
+/* ===== Testimonials Section ===== */
+.testimonials-section {
+  padding: 7rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-surface-container-low) 0%,
+    var(--mat-sys-surface) 100%
+  );
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--mat-sys-on-surface);
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--mat-sys-on-surface-variant);
+    margin: 0 0 3rem 0;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: column;
+      padding: 2.5rem;
+      background: var(--mat-sys-surface);
+      border-left: 4px solid var(--mat-sys-primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        border-left-color: var(--mat-sys-primary-container);
+      }
+
+      .testimonial-content {
+        flex: 1;
+        margin-bottom: 1.5rem;
+
+        .testimonial-text {
+          font-size: 1rem;
+          line-height: 1.8;
+          color: var(--mat-sys-on-surface-variant);
+          margin: 0;
+          font-style: italic;
+        }
+      }
+
+      .testimonial-author {
+        border-top: 1px solid var(--mat-sys-outline-variant);
+        padding-top: 1rem;
+
+        .author-name {
+          font-size: 0.95rem;
+          font-weight: 500;
+          color: var(--mat-sys-primary);
+          margin: 0;
+        }
       }
     }
   }
@@ -330,7 +421,7 @@
     var(--mat-sys-primary) 0%,
     var(--mat-sys-primary-container) 100%
   );
-  padding: 5rem 2rem;
+  padding: 7rem 2rem;
   text-align: center;
   color: var(--mat-sys-on-primary);
 
@@ -433,6 +524,18 @@
     }
 
     .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .testimonials-section {
+    padding: 3rem 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .testimonials-grid {
       grid-template-columns: 1fr;
     }
   }

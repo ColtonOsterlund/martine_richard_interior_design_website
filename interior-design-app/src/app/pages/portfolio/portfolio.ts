@@ -149,8 +149,8 @@ export class Portfolio {
     },
     {
       id: '6',
-      title: 'Scandinavian Minimalist Design',
-      image: 'https://images.unsplash.com/photo-1565183897294-7563f2a60be7?w=500&q=80',
+      title: 'Minimalist Design',
+      image: 'assets/StockPhoto3.jpg',
       category: 'Residential Redesign',
       shortDescription: 'Minimalist design with Scandinavian style elements.',
       description:
@@ -166,7 +166,7 @@ export class Portfolio {
     {
       id: '7',
       title: 'Warm Transitional Living Space',
-      image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&q=80',
+      image: 'assets/StockPhoto2.jpg',
       category: 'Paint & Color',
       shortDescription: 'Transitional design blending traditional and modern elements.',
       description:
