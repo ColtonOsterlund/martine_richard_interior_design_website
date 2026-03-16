@@ -38,6 +38,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/martine_richard_interior_design_website/",
               "budgets": [
                 {
                   "type": "initial",
