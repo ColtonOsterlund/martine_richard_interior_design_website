@@ -1,0 +1,206 @@
+<div class="contact-container">
+  <!-- Header Section -->
+  <section class="contact-header">
+    <div class="header-content">
+      <h1>Get In Touch</h1>
+      <p class="subtitle">Let's Discuss Your Interior Design Project</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="contact-main">
+    <div class="content-wrapper">
+      <!-- Contact Info Cards -->
+      <div class="contact-info-grid">
+        <div class="info-card">
+          <mat-icon class="info-icon">mail</mat-icon>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:coltonericosterlund@gmail.com">coltonericosterlund@gmail.com</a>
+          </p>
+          <p class="info-subtitle">We typically respond within 24 hours</p>
+        </div>
+
+        <div class="info-card">
+          <mat-icon class="info-icon">schedule</mat-icon>
+          <h3>Response Time</h3>
+          <p>Quick turnaround on inquiries</p>
+          <p class="info-subtitle">Initial consultation typically scheduled within 1 week</p>
+        </div>
+
+        <div class="info-card">
+          <mat-icon class="info-icon">location_on</mat-icon>
+          <h3>Location</h3>
+          <p>Available for consultations</p>
+          <p class="info-subtitle">In-person meetings and virtual consultations available</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-section">
+        <h2>Send us a Message</h2>
+        <p class="form-intro">
+          Tell us about your project and we'll get back to you soon with personalized recommendations.
+        </p>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Name *</mat-label>
+              <input
+                matInput
+                formControlName="name"
+                placeholder="John Doe"
+                required
+              />
+              <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
+                Name is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('name')?.hasError('minlength')">
+                Name must be at least 2 characters
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-row">
+            <mat-form-field appearance="outline" class="half-width">
+              <mat-label>Email *</mat-label>
+              <input
+                matInput
+                formControlName="email"
+                type="email"
+                placeholder="your@email.com"
+                required
+              />
+              <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
+                Email is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('email')?.hasError('email')">
+                Please enter a valid email
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="half-width">
+              <mat-label>Phone (Optional)</mat-label>
+              <input
+                matInput
+                formControlName="phone"
+                type="tel"
+                placeholder="(555) 000-0000"
+              />
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Project Type *</mat-label>
+              <mat-select formControlName="projectType" required>
+                <mat-option value="">Select a service</mat-option>
+                <mat-option *ngFor="let service of services" [value]="service">
+                  {{ service }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="contactForm.get('projectType')?.hasError('required')">
+                Please select a project type
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Budget (Optional)</mat-label>
+              <mat-select formControlName="budget">
+                <mat-option value="">Not specified</mat-option>
+                <mat-option value="under-5k">Under $5,000</mat-option>
+                <mat-option value="5k-10k">$5,000 - $10,000</mat-option>
+                <mat-option value="10k-25k">$10,000 - $25,000</mat-option>
+                <mat-option value="25k-50k">$25,000 - $50,000</mat-option>
+                <mat-option value="50k-plus">$50,000+</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Your Message *</mat-label>
+              <textarea
+                matInput
+                formControlName="message"
+                placeholder="Tell us about your vision, goals, and any specific requests..."
+                rows="6"
+                required
+              ></textarea>
+              <mat-hint align="end">
+                {{ contactForm.get('message')?.value?.length || 0 }}/1000
+              </mat-hint>
+              <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
+                Message is required
+              </mat-error>
+              <mat-error *ngIf="contactForm.get('message')?.hasError('minlength')">
+                Message must be at least 10 characters
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <!-- Status Messages -->
+          <div class="status-message" *ngIf="submitStatus === 'success'" [@fadeIn]>
+            <mat-icon class="success-icon">check_circle</mat-icon>
+            <div>
+              <h4>Thank you for your message!</h4>
+              <p>We've received your inquiry and will get back to you within 24 hours.</p>
+            </div>
+          </div>
+
+          <div class="status-message error" *ngIf="submitStatus === 'error'" [@fadeIn]>
+            <mat-icon class="error-icon">error</mat-icon>
+            <div>
+              <h4>Oops! Something went wrong.</h4>
+              <p>{{ errorMessage }}</p>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!contactForm.valid || isSubmitting"
+            class="submit-btn"
+          >
+            <span *ngIf="!isSubmitting">Send Message</span>
+            <span *ngIf="isSubmitting">
+              <mat-spinner diameter="20"></mat-spinner>
+              Sending...
+            </span>
+          </button>
+
+          <p class="form-note">
+            All fields marked with * are required. Your information will be kept confidential.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="content-wrapper">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item" *ngFor="let faq of faqs">
+          <h4>{{ faq.question }}</h4>
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2>Ready to Start Your Design Journey?</h2>
+      <p>Contact Martine Richard today and let's create something beautiful together.</p>
+    </div>
+  </section>
+</div>

@@ -65,7 +65,7 @@ export class Portfolio {
     {
       id: '1',
       title: 'Modern Living Room Transformation',
-      image: 'https://images.unsplash.com/photo-1576228541830-f54bebcaa664?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=500&q=80',
       category: 'Residential Redesign',
       shortDescription: 'Complete living room redesign with new furniture and color palette.',
       description:
@@ -81,7 +81,7 @@ export class Portfolio {
     {
       id: '2',
       title: 'Elegant Master Bedroom Suite',
-      image: 'https://images.unsplash.com/photo-1540932239986-7a9cd966aafa?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80',
       category: 'Furniture Selection',
       shortDescription: 'Curated bedroom furniture creating a luxurious retreat.',
       description:
@@ -113,11 +113,11 @@ export class Portfolio {
     {
       id: '4',
       title: 'Home Staging for Sale',
-      image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80',
       category: 'Staging',
       shortDescription: 'Professional staging that helped sell property in record time.',
       description:
-        'Strategic home staging that highlighted the property's best features and allowed buyers to visualize their future. The property sold significantly above the asking price.',
+        'Strategic home staging that highlighted the property\'s best features and allowed buyers to visualize their future. The property sold significantly above the asking price.',
       services: ['Staging', 'Furniture Arrangement', 'Decor Styling'],
       highlights: [
         'Decluttering and depersonalization',
@@ -129,7 +129,7 @@ export class Portfolio {
     {
       id: '5',
       title: 'Full Home Renovation',
-      image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&q=80',
       category: 'Renovation',
       shortDescription: 'Complete home renovation with updated design throughout.',
       description:
@@ -166,7 +166,7 @@ export class Portfolio {
     {
       id: '7',
       title: 'Warm Transitional Living Space',
-      image: 'https://images.unsplash.com/photo-1624368513694-65afa4b0b04a?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&q=80',
       category: 'Paint & Color',
       shortDescription: 'Transitional design blending traditional and modern elements.',
       description:
@@ -182,7 +182,7 @@ export class Portfolio {
     {
       id: '8',
       title: 'Professional Office Design',
-      image: 'https://images.unsplash.com/photo-1593642532400-2682a8856661?w=500&q=80',
+      image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=500&q=80',
       category: 'Residential Redesign',
       shortDescription: 'Functional and beautiful home office design.',
       description:

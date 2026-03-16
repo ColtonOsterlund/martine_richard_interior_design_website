@@ -1,0 +1,482 @@
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header Section ===== */
+.contact-header {
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-primary-container) 0%,
+    var(--mat-sys-primary) 100%
+  );
+  padding: 5rem 2rem;
+  color: var(--mat-sys-on-primary);
+  text-align: center;
+
+  .header-content {
+    max-width: 900px;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      margin: 0 0 1rem 0;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin: 0;
+      opacity: 0.95;
+    }
+  }
+}
+
+/* ===== Main Contact Section ===== */
+.contact-main {
+  padding: 5rem 2rem;
+  background: var(--mat-sys-surface);
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Contact Info Cards ===== */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+
+  .info-card {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(
+      135deg,
+      var(--mat-sys-surface-container) 0%,
+      var(--mat-sys-surface-container-high) 100%
+    );
+    border-radius: 8px;
+    border: 1px solid var(--mat-sys-outline-variant);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+      border-color: var(--mat-sys-primary);
+    }
+
+    .info-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      color: var(--mat-sys-primary);
+      margin: 0 auto 1rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 0 0 1rem 0;
+      color: var(--mat-sys-on-surface);
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--mat-sys-on-surface-variant);
+      margin: 0 0 0.5rem 0;
+      line-height: 1.6;
+
+      a {
+        color: var(--mat-sys-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .info-subtitle {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-weight: 400;
+    }
+  }
+}
+
+/* ===== Form Section ===== */
+.form-section {
+  max-width: 700px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    color: var(--mat-sys-on-surface);
+    letter-spacing: 0.5px;
+  }
+
+  .form-intro {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--mat-sys-on-surface-variant);
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .form-group {
+      width: 100%;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+      .half-width {
+        width: 100%;
+      }
+    }
+
+    .full-width {
+      width: 100%;
+    }
+
+    mat-form-field {
+      width: 100%;
+
+      &::ng-deep {
+        .mdc-text-field {
+          width: 100%;
+        }
+
+        .mat-mdc-form-field-error {
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+      font-family: inherit;
+    }
+
+    /* Status Messages */
+    .status-message {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+      border-left: 4px solid #4caf50;
+      border-radius: 4px;
+      color: #2e7d32;
+
+      &.error {
+        background: linear-gradient(135deg, #ffebee 0%, #fff3e0 100%);
+        border-left-color: #f44336;
+        color: #c62828;
+      }
+
+      .success-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: #4caf50;
+      }
+
+      .error-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: #f44336;
+      }
+
+      h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem 0;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+      }
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      padding: 0.85rem 2.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      height: auto;
+      transition: all 0.3s ease;
+
+      &:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      mat-spinner {
+        margin-right: 0.75rem;
+      }
+
+      ::ng-deep {
+        .mdc-button__label {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--mat-sys-on-surface-variant);
+      margin: 1rem 0 0 0;
+      font-style: italic;
+    }
+  }
+}
+
+/* ===== FAQ Section ===== */
+.faq-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-surface-container-low) 0%,
+    var(--mat-sys-surface) 100%
+  );
+
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 0 3rem 0;
+    color: var(--mat-sys-on-surface);
+    letter-spacing: 0.5px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .faq-item {
+      padding: 2rem;
+      background: var(--mat-sys-surface);
+      border-radius: 8px;
+      border: 1px solid var(--mat-sys-outline-variant);
+      transition: all 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+      }
+
+      h4 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 1rem 0;
+        color: var(--mat-sys-primary);
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--mat-sys-on-surface-variant);
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+  background: linear-gradient(
+    135deg,
+    var(--mat-sys-primary) 0%,
+    var(--mat-sys-primary-container) 100%
+  );
+  padding: 5rem 2rem;
+  text-align: center;
+  color: var(--mat-sys-on-primary);
+
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.5px;
+      color: var(--mat-sys-on-primary);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 300;
+      opacity: 0.95;
+      color: var(--mat-sys-on-primary);
+    }
+  }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 3rem 1.5rem;
+
+    .header-content h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .contact-main {
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-info-grid {
+    margin-bottom: 3rem;
+  }
+
+  .form-section {
+    .contact-form {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  }
+
+  .faq-section {
+    padding: 3rem 1.5rem;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .cta-section {
+    padding: 3rem 1.5rem;
+
+    .cta-content h2 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-main {
+    padding: 2rem 1rem;
+  }
+
+  .contact-info-grid {
+    .info-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .form-section {
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .form-intro {
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      gap: 1.5rem;
+
+      mat-form-field {
+        font-size: 0.9rem;
+      }
+
+      .status-message {
+        gap: 1rem;
+        padding: 1rem;
+
+        .success-icon,
+        .error-icon {
+          font-size: 20px;
+          width: 20px;
+          height: 20px;
+        }
+
+        h4 {
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+      .submit-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .faq-section {
+    padding: 2rem 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .cta-section {
+    padding: 2rem 1rem;
+
+    .cta-content h2 {
+      font-size: 1.4rem;
+    }
+  }
+}
