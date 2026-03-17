@@ -1,2 +1,54 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<mat-sidenav-container class="app-sidenav-container">
+  <mat-sidenav #mobileMenu mode="over" [opened]="false" class="mobile-sidenav">
+    <nav class="mobile-nav">
+      <a 
+        mat-button 
+        routerLink="/about" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        (click)="mobileMenu.close()"
+        class="mobile-nav-item"
+      >
+        About Us
+      </a>
+
+      <a 
+        mat-button 
+        routerLink="/services" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        (click)="mobileMenu.close()"
+        class="mobile-nav-item"
+      >
+        Services Offered
+      </a>
+
+      <a 
+        mat-button 
+        routerLink="/portfolio" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        (click)="mobileMenu.close()"
+        class="mobile-nav-item"
+      >
+        Portfolio
+      </a>
+
+      <a 
+        mat-button 
+        routerLink="/contact" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        (click)="mobileMenu.close()"
+        class="mobile-nav-item"
+      >
+        Contact Us
+      </a>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-navbar [mobileMenu]="mobileMenu"></app-navbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,12 +1,23 @@
-<mat-sidenav-container class="navbar-container">
-  <mat-sidenav #mobileMenu mode="side" [opened]="false" class="mobile-sidenav" (click)="mobileMenu.close()">
-    <nav class="mobile-nav">
+<mat-toolbar color="primary" class="navbar">
+  <div class="navbar-content">
+    <!-- Logo -->
+    <div class="logo-section">
+      <a routerLink="/" class="logo-link">
+        <img 
+          src="assets/Martine_Richard_Interior_Design_Logo.svg" 
+          alt="Martine Richard Interior Design" 
+          class="logo"
+        />
+      </a>
+    </div>
+
+    <!-- Desktop Navigation Menu -->
+    <nav class="nav-menu desktop-nav">
       <a 
         mat-button 
         routerLink="/about" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
-        class="mobile-nav-item"
       >
         About Us
       </a>
@@ -16,7 +27,6 @@
         routerLink="/services" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
-        class="mobile-nav-item"
       >
         Services Offered
       </a>
@@ -26,7 +36,6 @@
         routerLink="/portfolio" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
-        class="mobile-nav-item"
       >
         Portfolio
       </a>
@@ -36,76 +45,19 @@
         routerLink="/contact" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
-        class="mobile-nav-item"
       >
         Contact Us
       </a>
     </nav>
-  </mat-sidenav>
 
-  <mat-sidenav-content>
-    <mat-toolbar color="primary" class="navbar">
-      <div class="navbar-content">
-        <!-- Logo -->
-        <div class="logo-section">
-          <a routerLink="/" class="logo-link">
-            <img 
-              src="assets/Martine_Richard_Interior_Design_Logo.svg" 
-              alt="Martine Richard Interior Design" 
-              class="logo"
-            />
-          </a>
-        </div>
-
-        <!-- Desktop Navigation Menu -->
-        <nav class="nav-menu desktop-nav">
-          <a 
-            mat-button 
-            routerLink="/about" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: false }"
-          >
-            About Us
-          </a>
-
-          <a 
-            mat-button 
-            routerLink="/services" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: false }"
-          >
-            Services Offered
-          </a>
-
-          <a 
-            mat-button 
-            routerLink="/portfolio" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: false }"
-          >
-            Portfolio
-          </a>
-
-          <a 
-            mat-button 
-            routerLink="/contact" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: false }"
-          >
-            Contact Us
-          </a>
-        </nav>
-
-        <!-- Mobile Menu Button -->
-        <button 
-          mat-icon-button 
-          (click)="mobileMenu.toggle()" 
-          class="mobile-menu-btn"
-          [attr.aria-label]="'Toggle navigation menu'"
-        >
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-    </mat-toolbar>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <!-- Mobile Menu Button -->
+    <button 
+      mat-icon-button 
+      (click)="openMobileMenu()" 
+      class="mobile-menu-btn"
+      [attr.aria-label]="'Toggle navigation menu'"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

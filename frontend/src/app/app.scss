@@ -1,0 +1,32 @@
+.app-sidenav-container {
+  height: 100vh;
+  display: flex;
+}
+
+.mobile-sidenav {
+  width: 250px;
+  background-color: var(--mat-sys-primary-container);
+}
+
+.mobile-nav {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .mobile-nav-item {
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    color: var(--mat-sys-on-primary-container);
+
+    &[routerLinkActive='active'] {
+      background-color: var(--mat-sys-primary);
+      color: var(--mat-sys-on-primary);
+    }
+  }
+}

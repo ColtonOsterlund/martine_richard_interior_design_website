@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,4 +20,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
-export class Navbar {}
+export class Navbar {
+  @Input() mobileMenu: any;
+
+  openMobileMenu(): void {
+    if (this.mobileMenu) {
+      this.mobileMenu.open();
+    }
+  }
+}
