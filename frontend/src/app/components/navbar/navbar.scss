@@ -202,6 +202,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
+    overflow-x: hidden;
+
     .navbar-content {
       gap: 1rem;
       min-height: 56px;
@@ -232,6 +234,9 @@
 
     .mobile-dropdown {
       display: flex;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }
