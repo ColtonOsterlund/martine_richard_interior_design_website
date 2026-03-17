@@ -21,11 +21,10 @@
 
     .logo-section {
       flex-shrink: 0;
-      position: absolute;
-      left: 16px;
       display: flex;
       align-items: center;
       height: 100%;
+      order: -1;
 
       .logo-link {
         display: flex;
@@ -206,6 +205,17 @@
     .navbar-content {
       gap: 1rem;
       min-height: 56px;
+      justify-content: center;
+
+      .logo-section {
+        position: static;
+        order: 0;
+        flex: 1;
+
+        .logo-link {
+          justify-content: center;
+        }
+      }
 
       .nav-menu.desktop-nav {
         display: none;
@@ -213,6 +223,8 @@
 
       .mobile-menu-btn {
         display: block;
+        position: absolute;
+        right: 16px;
       }
     }
 
