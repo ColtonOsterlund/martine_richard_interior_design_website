@@ -1,0 +1,9 @@
+{
+  "name": "martine-richard-interior-design",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "server"
+  ]
+}

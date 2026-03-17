@@ -112,7 +112,10 @@ export class Contact implements OnInit {
   }
 
   private sendEmail(formData: any): void {
-    const backendUrl = 'http://localhost:3000/api/contact';
+    const isDevelopment = window.location.hostname === 'localhost';
+    const backendUrl = isDevelopment 
+      ? 'http://localhost:3000/api/contact'
+      : `${window.location.origin}/api/contact`;
 
     this.http.post(backendUrl, formData).subscribe({
       next: (response: any) => {
