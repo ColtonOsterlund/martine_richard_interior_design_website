@@ -205,12 +205,14 @@
     .navbar-content {
       gap: 1rem;
       min-height: 56px;
-      justify-content: center;
+      justify-content: flex-start;
 
       .logo-section {
-        position: static;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         order: 0;
-        flex: 1;
+        flex: none;
 
         .logo-link {
           justify-content: center;
