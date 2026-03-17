@@ -4,8 +4,7 @@ import { RouterModule } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-navbar',
@@ -16,27 +15,9 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule,
+    MatSidenavModule,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
-  animations: [
-    trigger('slideDown', [
-      state('in', style({ opacity: 1, height: '*' })),
-      transition(':enter', [
-        style({ opacity: 0, height: 0 }),
-        animate('300ms ease-in'),
-      ]),
-      transition(':leave', [
-        animate('300ms ease-out', style({ opacity: 0, height: 0 })),
-      ]),
-    ]),
-  ],
 })
-export class Navbar {
-  mobileMenuOpen = false;
-
-  toggleMobileMenu(): void {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
-  }
-}
+export class Navbar {}

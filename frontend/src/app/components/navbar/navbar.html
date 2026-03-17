@@ -1,33 +1,22 @@
-<mat-toolbar color="primary" class="navbar">
-  <div class="navbar-content">
-    <!-- Logo -->
-    <div class="logo-section">
-      <a routerLink="/" class="logo-link">
-        <img 
-          src="assets/Martine_Richard_Interior_Design_Logo.svg" 
-          alt="Martine Richard Interior Design" 
-          class="logo"
-        />
-      </a>
-    </div>
-
-    <!-- Desktop Navigation Menu -->
-    <nav class="nav-menu desktop-nav">
+<mat-sidenav-container class="navbar-container">
+  <mat-sidenav #mobileMenu mode="side" [opened]="false" class="mobile-sidenav" (click)="mobileMenu.close()">
+    <nav class="mobile-nav">
       <a 
         mat-button 
         routerLink="/about" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
+        class="mobile-nav-item"
       >
         About Us
       </a>
 
-      <!-- Services with Dropdown -->
       <a 
         mat-button 
         routerLink="/services" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
+        class="mobile-nav-item"
       >
         Services Offered
       </a>
@@ -37,6 +26,7 @@
         routerLink="/portfolio" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
+        class="mobile-nav-item"
       >
         Portfolio
       </a>
@@ -46,67 +36,76 @@
         routerLink="/contact" 
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: false }"
+        class="mobile-nav-item"
       >
         Contact Us
       </a>
     </nav>
+  </mat-sidenav>
 
-    <!-- Mobile Menu Button -->
-    <button 
-      mat-icon-button 
-      (click)="toggleMobileMenu()" 
-      class="mobile-menu-btn"
-      [attr.aria-label]="'Toggle navigation menu'"
-    >
-      <mat-icon>{{ mobileMenuOpen ? 'close' : 'menu' }}</mat-icon>
-    </button>
-  </div>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="navbar">
+      <div class="navbar-content">
+        <!-- Logo -->
+        <div class="logo-section">
+          <a routerLink="/" class="logo-link">
+            <img 
+              src="assets/Martine_Richard_Interior_Design_Logo.svg" 
+              alt="Martine Richard Interior Design" 
+              class="logo"
+            />
+          </a>
+        </div>
 
-  <!-- Mobile Navigation Menu -->
-  <nav class="mobile-nav" *ngIf="mobileMenuOpen" [@slideDown]>
-    <a 
-      mat-button 
-      routerLink="/about" 
-      routerLinkActive="active"
-      (click)="mobileMenuOpen = false"
-      class="mobile-nav-item"
-    >
-      About Us
-    </a>
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu desktop-nav">
+          <a 
+            mat-button 
+            routerLink="/about" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }"
+          >
+            About Us
+          </a>
 
-    <div class="mobile-submenu">
-      <a 
-        mat-button 
-        routerLink="/services" 
-        routerLinkActive="active"
-        (click)="mobileMenuOpen = false"
-        class="mobile-nav-item"
-      >
-        Services Offered
-      </a>
-    </div>
+          <a 
+            mat-button 
+            routerLink="/services" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }"
+          >
+            Services Offered
+          </a>
 
-    <a 
-      mat-button 
-      routerLink="/portfolio" 
-      routerLinkActive="active"
-      (click)="mobileMenuOpen = false"
-      class="mobile-nav-item"
-    >
-      Portfolio
-    </a>
+          <a 
+            mat-button 
+            routerLink="/portfolio" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }"
+          >
+            Portfolio
+          </a>
 
-    <a 
-      mat-button 
-      routerLink="/contact" 
-      routerLinkActive="active"
-      (click)="mobileMenuOpen = false"
-      class="mobile-nav-item"
-    >
-      Contact Us
-    </a>
-  </nav>
-</mat-toolbar>
+          <a 
+            mat-button 
+            routerLink="/contact" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: false }"
+          >
+            Contact Us
+          </a>
+        </nav>
 
-
-<!-- Services Dropdown Menu removed -->
+        <!-- Mobile Menu Button -->
+        <button 
+          mat-icon-button 
+          (click)="mobileMenu.toggle()" 
+          class="mobile-menu-btn"
+          [attr.aria-label]="'Toggle navigation menu'"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
