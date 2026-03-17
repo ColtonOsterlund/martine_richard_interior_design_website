@@ -57,7 +57,54 @@
       class="mobile-menu-btn"
       [attr.aria-label]="'Toggle navigation menu'"
     >
-      <mat-icon>menu</mat-icon>
+      <mat-icon>{{ menuOpen ? 'close' : 'menu' }}</mat-icon>
     </button>
   </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <nav class="mobile-dropdown" *ngIf="menuOpen">
+    <a 
+      mat-button
+      routerLink="/about" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
+      (click)="closeMenu.emit()"
+      class="mobile-dropdown-item"
+    >
+      About Us
+    </a>
+
+    <a 
+      mat-button
+      routerLink="/services" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
+      (click)="closeMenu.emit()"
+      class="mobile-dropdown-item"
+    >
+      Services Offered
+    </a>
+
+    <a 
+      mat-button
+      routerLink="/portfolio" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
+      (click)="closeMenu.emit()"
+      class="mobile-dropdown-item"
+    >
+      Portfolio
+    </a>
+
+    <a 
+      mat-button
+      routerLink="/contact" 
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: false }"
+      (click)="closeMenu.emit()"
+      class="mobile-dropdown-item"
+    >
+      Contact Us
+    </a>
+  </nav>
 </mat-toolbar>
